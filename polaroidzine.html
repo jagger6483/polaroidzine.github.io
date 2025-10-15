@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polaroid Zine </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    // Pastel, high-contrast palette
+                    'soft-pink': '#FCE4EC',   /* Very light pastel pink for sub-text/links */
+                    'accent-pink': '#FFB3C6', /* Brighter pastel pink for primary highlights/buttons */
+                    'text-light': '#ffffff',  /* Pure White for body text on dark background */
+                    'bg-dark': '#000000',     /* Pure Black background */
+                    'text-dark': '#111111',   /* Near-black text on white cards */
+                },
+                fontFamily: {
+                    // Inter for all main body/sans-serif text
+                    sans: ['Inter', 'sans-serif'],
+                    // Playfair Display for editorial titles
+                    title: ['"Playfair Display"', 'serif'],
+                },
+                boxShadow: {
+                    // Soft white shadow for dark mode, subtle lift
+                    'soft': '0 4px 10px rgba(255, 255, 255, 0.05)', 
+                }
+            }
+        }
+    }
+    </script>
+
+    <style>
+        body {
+            /* Black background, pure white text (CDM high-contrast) */
+            background-color: #000000;
+            color: #ffffff; 
+            /* Remove the grid effect for a cleaner magazine look */
+            background-image: none;
+        }
+        
+        /* Article cards are clean white blocks with dark text */
+        .article-card {
+            background-color: white; 
+            color: var(--tw-colors-text-dark); /* Use the near-black text on white card */
+            transition: all 0.2s ease-in-out;
+            border-radius: 0; /* Remove rounded corners for a modern magazine feel */
+            border: 1px solid #eee; /* Light border on white for definition */
+        }
+        
+        .article-card:hover {
+            transform: translateY(-3px); /* Slightly more dramatic lift on hover */
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1); 
+        }
+        
+        /* Remove the 'clipping' style for a sleeker look */
+        .clipping-style {
+            border: 0;
+            box-shadow: none;
+        }
+
+        .cta-button {
+             /* Bold, high-contrast button style */
+            box-shadow: 0 4px 0px 0px var(--tw-colors-bg-dark); /* Bold drop shadow */
+        }
+
+        .cta-button:hover {
+            box-shadow: none;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header class="bg-bg-dark sticky top-0 z-50 border-b border-gray-900 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-4xl font-title font-bold tracking-tight uppercase">
+                <a href="#" class="text-text-light hover:text-accent-pink transition duration-300">
+                    <span class="text-accent-pink">POLAROID</span> ZINE
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 text-lg font-sans font-medium uppercase">
+                <a href="#about-us-section" class="text-text-light hover:text-accent-pink transition duration-300">About</a>
+                <a href="#features" class="text-text-light hover:text-accent-pink transition duration-300">Features</a>
+                <a href="#news-part" class="text-text-light hover:text-accent-pink transition duration-300">News</a> 
+                <a href="#about-us-section" class="text-text-light hover:text-accent-pink transition duration-300">Contact</a>
+            </nav>
+
+            <button class="text-text-light hover:text-accent-pink p-2 rounded-full transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        
+        <section class="mb-16">
+            <div class="block group bg-white article-card clipping-style">
+                <div class="lg:flex overflow-hidden">
+                    
+                    <div class="lg:w-3/5 h-80 md:h-96 lg:h-[480px] overflow-hidden">
+                        <img src="https://placehold.co/1000x800/FFB3C6/000000?text=ISSUE+1+PREVIEW" 
+                            alt="Placeholder image for the coming soon featured article" 
+                            class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500">
+                    </div>
+
+                    <div class="lg:w-2/5 p-6 sm:p-10 flex flex-col justify-center text-text-dark">
+                        <p class="text-sm uppercase font-sans font-bold text-accent-pink mb-2 tracking-widest">COVER STORY - FALL 2025</p>
+                        <h2 class="text-5xl sm:text-6xl font-title font-bold leading-none mb-4 uppercase">
+                            ISSUE No. 1<br> <span class="text-soft-pink italic font-normal">COMING SOON</span>
+                        </h2>
+                        <p class="text-gray-700 mb-6 text-xl font-sans font-normal">
+                            Our debut issue, featuring exclusive photo essays, interviews, and deep dives into pop culture's soft spots, is currently being finalized.
+                        </p>
+                        <a href="#" class="inline-block self-start bg-accent-pink text-white font-sans font-bold py-3 px-8 rounded-none uppercase tracking-wider cta-button">
+                              See Preview
+                        </a>
+                        <div class="text-sm font-sans text-gray-500 mt-4">
+                            Release: Fall 2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us-section" class="mb-16">
+            <div class="bg-white p-6 sm:p-10 article-card clipping-style text-text-dark max-w-5xl mx-auto">
+                <h3 class="text-4xl font-title font-bold italic mb-4 border-b-4 border-accent-pink pb-3 uppercase">
+                    Our <span class="text-accent-pink">Editorial Note</span>
+                </h3>
+                <p class="text-lg font-sans leading-relaxed text-gray-700">
+                    Polaroid Zine is your dedicated space where music, memory, and style converge. Inspired by the intimate, tangible feel of an instant photo, we capture the small, vivid cultural moments that shape us—from exclusive artist features and interviews to nostalgic fashion retrospectives. We champion authenticity and curiosity, delivering compelling content that celebrates individuality and creativity in both digital and collectible print formats.
+                </p>
+                <div class="mt-6 text-right">
+                    <p class="text-sm font-sans font-semibold text-gray-500 uppercase">
+                        — The Polaroid Zine Team
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news-part" class="mb-16">
+            <h3 class="text-4xl font-title font-bold italic mb-8 pb-3 border-b-4 border-soft-pink uppercase">
+                POLAROID <span class="text-accent-pink">PRESS</span>
+            </h3>
+            
+            <div class="block group bg-white p-6 article-card shadow-soft text-text-dark mb-8">
+                <p class="text-xs uppercase font-sans font-semibold text-accent-pink mb-1 tracking-widest">Music / Album Spotlight</p>
+                <h4 class="text-3xl font-title font-bold leading-snug mb-2 group-hover:text-accent-pink transition duration-300">
+                    Not for Radio: María Zardoya’s Melt and the Art of Reclaiming Quiet
+                </h4>
+                <p class="text-sm text-gray-500 font-sans italic mb-4">
+                    By Polaroid Zine Staff — September 2025
+                </p>
+
+                <div class="space-y-6 text-base text-gray-700 font-sans">
+                    <p>
+                    <strong class="font-bold">María Zardoya has always understood atmosphere.</strong> As the hypnotic voice of The Marías, she helped define the dream-pop sound of the late 2010's,&nbsp; silky vocals, hazy synths, and a kind of cinematic melancholy. But her new project, Not for Radio, feels like something else entirely. With her debut solo album Melt, released this fall, Zardoya steps into solitude and lets silence become part of the music.</p>
+                    
+                    <h5 class="text-xl font-title font-bold italic text-text-dark">A Different Frequency</h5>
+                    <p>
+                  The name Not for Radio says it all. This isn’t an album chasing hits or streaming algorithm,&nbsp; it’s one that drifts, breathes, and resists polish. In interviews, Zardoya described the record as “music made without trying to please anyone.” Recorded over three quiet weeks in upstate New York with longtime collaborator Luca Buccellati and producer Sam Evian, Melt is more personal than anything she’s released before.</p>
+                    <p>
+                        The sound is stripped-down yet immersive: analog synths hum beneath reverb-coated guitars, and Zardoya’s voice — softer, more human than ever — floats in and out of focus. Each track feels like it’s happening in real time, caught between memory and invention.
+                    </p>
+                    
+                    <h5 class="text-xl font-title font-bold italic text-text-dark">Themes of Solitude and Self-Reconstruction</h5>
+                    <p>
+                    “Melt” isn’t about heartbreak in the traditional sens,&nbsp; it’s about what happens after. The songs move through loneliness, longing, and a kind of fragile rebirth. On tracks like “Fever Dream”&nbsp; and “Glass House,” Zardoya wrestles with detachment and the fear of becoming unrecognizable to yourself. The lyrics often read like journal entries: short, confessional, and almost whispered.</p>
+                    <p>
+                      Where The Marías’ work often felt cinematic and curated, Melt feels unfiltered  like a late-night voice memo you weren’t meant to hear. It’s the sound of a woman asking who she is when the cameras and collaborators are gone.
+                  </p>
+                    
+                    <h5 class="text-xl font-title font-bold italic text-text-dark">Why It Matters</h5>
+                    <p>
+                  With Not for Radio, Zardoya isn’t just starting a side project,&nbsp; she’s redefining what creative freedom looks like in a world obsessed with virality. In an era where “radio” means playlists and metrics, Melt is a reminder that music can still feel handmade, intimate, and alive. It’s not a breakup album, not a reinventio,&nbsp; but a quiet reclamation of voice and space.</p>
+
+                    <a href="#" class="inline-block self-start bg-accent-pink text-white font-sans font-bold py-3 px-8 rounded-none uppercase tracking-wider cta-button mt-4">
+                        Read the Full Article
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 space-y-4">
+                <h4 class="text-2xl font-title font-bold italic border-b border-gray-800 pb-2 mb-4 uppercase">More Press</h4>
+                <a href="#" class="block p-4 border-b border-gray-800 hover:bg-gray-900 transition duration-300">
+                    <p class="text-xs uppercase font-sans font-semibold text-soft-pink tracking-widest mb-1">Film / Review</p>
+                    <h5 class="text-xl font-title font-semibold hover:text-accent-pink transition duration-300">A Quiet Thrill: The Best Indie Films of the Summer</h5>
+                </a>
+                 <a href="#" class="block p-4 border-b border-gray-800 hover:bg-gray-900 transition duration-300">
+                    <p class="text-xs uppercase font-sans font-semibold text-soft-pink tracking-widest mb-1">Style / Quick Take</p>
+                    <h5 class="text-xl font-title font-semibold hover:text-accent-pink transition duration-300">The Ultimate 5-Piece Fall Wardrobe Capsule</h5>
+                </a>
+            </div>
+
+        </section>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 md:gap-10" id="features">
+
+            <div class="lg:col-span-3">
+                <h3 class="text-4xl font-title font-bold italic mb-8 pb-3 border-b-4 border-accent-pink uppercase">
+                    LATEST <span class="text-soft-pink">CONTENT</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="#" class="block group bg-white p-6 article-card shadow-soft">
+                        <div class="h-60 overflow-hidden mb-4 border border-gray-300">
+                            <img src="https://placehold.co/600x400/FFB3C6/000000?text=CDM+STYLE+FEATURE" alt="Placeholder image for pending content" class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500">
+                        </div>
+                        <p class="text-xs uppercase font-sans font-semibold text-accent-pink mb-1 tracking-widest">Interview</p>
+                        <h4 class="text-2xl font-title font-bold leading-snug mb-2 text-text-dark group-hover:text-accent-pink transition duration-300">The Comfort of Analog Film</h4>
+                        <p class="text-base text-gray-700 font-sans line-clamp-3">
+                            This feature will explore the resurgence of 35mm photography and the nostalgic pull of film in a digital age.
+                        </p>
+                    </a>
+                    
+                    <a href="#" class="block group bg-white p-6 article-card shadow-soft">
+                        <div class="h-60 overflow-hidden mb-4 border border-gray-300">
+                            <img src="https://placehold.co/600x400/FCE4EC/000000?text=CDM+STYLE+ESSAY" alt="Placeholder image for pending content" class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-500">
+                        </div>
+                        <p class="text-xs uppercase font-sans font-semibold text-accent-pink mb-1 tracking-widest">Essay</p>
+                        <h4 class="text-2xl font-title font-bold leading-snug mb-2 text-text-dark group-hover:text-accent-pink transition duration-300">Unpacking the 2000s Horror Revival</h4>
+                        <p class="text-base text-gray-700 font-sans line-clamp-3">
+                            A deep dive into the media, fashion, and pop culture trends influencing the current wave of spooky nostalgia.
+                        </p>
+                    </a>
+
+                    <div class="md:col-span-2 mt-4 space-y-4">
+                        <h4 class="text-2xl font-title font-bold italic border-b border-gray-800 pb-2 mb-4 uppercase">More Features</h4>
+                        <a href="#" class="block p-4 border-b border-gray-800 hover:bg-gray-900 transition duration-300">
+                            <p class="text-xs uppercase font-sans font-semibold text-soft-pink tracking-widest mb-1">Style</p>
+                            <h5 class="text-xl font-title font-semibold hover:text-accent-pink transition duration-300">Sustainable Costumes: Beyond Fast Fashion</h5>
+                        </a>
+                        <a href="#" class="block p-4 border-b border-gray-800 hover:bg-gray-900 transition duration-300">
+                            <p class="text-xs uppercase font-sans font-semibold text-soft-pink tracking-widest mb-1">Media</p>
+                            <h5 class="text-xl font-title font-semibold hover:text-accent-pink transition duration-300">The Modern 'Final Girl' Trope in Cinema</h5>
+                        </a>
+                        <a href="#" class="block p-4 border-b border-gray-800 hover:bg-gray-900 transition duration-300">
+                            <p class="text-xs uppercase font-sans font-semibold text-soft-pink tracking-widest mb-1">Pop Culture</p>
+                            <h5 class="text-xl font-title font-semibold hover:text-accent-pink transition duration-300">The Power of the Micro-Trend in Streetwear</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="lg:col-span-1 space-y-8">
+                
+                <div class="bg-white p-6 article-card shadow-soft text-center text-text-dark border-4 border-accent-pink">
+                    <h4 class="text-2xl font-title font-bold italic mb-2 uppercase">Print Issue: Fading Light</h4>
+                    <img src="https://placehold.co/300x200/FFB3C6/ffffff?text=COLLECTIBLE+ZINE" 
+                        alt="Mockup of the zine cover" 
+                        class="w-2/3 mx-auto my-4 border-2 border-accent-pink">
+                    <p class="text-sm font-sans text-gray-700 mb-3 font-semibold uppercase">Limited Edition Pre-Orders</p>
+                    <button class="w-full bg-accent-pink text-white font-sans font-bold py-3 px-6 rounded-none uppercase transition opacity-100 cta-button">
+                        Notify Me on Launch
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 article-card clipping-style text-text-dark">
+                    <h4 class="text-2xl font-title font-bold italic mb-4 border-b border-accent-pink pb-2 uppercase">Soft Notes</h4>
+                    <p class="text-sm font-sans text-gray-700 mb-4">
+                        Get our quiet weekly update, straight to your inbox. Be the first to know about new features and print drops.
+                    </p>
+                    <div class="flex space-x-2">
+                        <input type="email" placeholder="email@address.com" class="p-3 w-full rounded-none bg-gray-100 border border-gray-300 text-text-dark font-sans focus:outline-none focus:border-accent-pink" required>
+                        <button class="bg-accent-pink text-white px-5 rounded-none font-sans font-bold hover:bg-soft-pink hover:text-bg-dark transition cta-button">
+                            GO
+                        </button>
+                    </div>
+                </div>
+                
+            </aside>
+        </div>
+
+    </main>
+
+    <footer class="bg-bg-dark border-t-8 border-accent-pink mt-20 text-text-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h5 class="text-xl font-title font-bold italic mb-3 text-accent-pink uppercase">Polaroid Zine</h5>
+                    <ul class="space-y-2 text-sm text-gray-300 font-sans font-normal">
+                        <li><a href="#about-us-section" class="hover:text-soft-pink transition uppercase">Our Story</a></li>
+                        <li><a href="#" class="hover:text-soft-pink transition uppercase">Archives</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xl font-title font-bold italic mb-3 uppercase">Sections</h5>
+                    <ul class="space-y-2 text-sm text-gray-300 font-sans font-normal">
+                        <li><a href="#" class="hover:text-soft-pink transition uppercase">Photo Essays</a></li>
+                        <li><a href="#" class="hover:text-soft-pink transition uppercase">Interviews</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="text-xl font-title font-bold italic mb-3 uppercase">Connect</h5>
+                    <ul class="space-y-2 text-sm text-gray-300 font-sans font-normal">
+                        <li><a href="https://www.instagram.com/polaroidzine/" target="_blank" rel="noopener noreferrer" class="hover:text-soft-pink transition uppercase">Instagram</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScIqGjqLJ7JiGgShbmwnt30qJIoXHml3fvHh6rC9rA9CB3Zkw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="hover:text-soft-pink transition uppercase">Apply to Write</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-1 text-right">
+                    <div class="text-4xl font-title font-bold tracking-tight uppercase">
+                        <span class="text-accent-pink">PZ</span>
+                    </div>
+                    <p class="text-sm text-gray-500 font-sans mt-2 italic">A lens on life.</p>
+                </div>
+            </div>
+
+            <div class="text-center text-sm font-sans text-gray-600 pt-6 border-t border-gray-800">
+                &copy; 2025 Polaroid Zine. All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
